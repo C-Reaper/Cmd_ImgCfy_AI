@@ -23,11 +23,11 @@ int main(){
         }
     );
 
-    NeuralDataMap ndm = NeuralDataMap_Make_GSprite(DATA_PATH SPRITE_TRAINING,&epoch,SPRITE_COUNT,SPRITE_MAX);
+    NeuralDataMap ndm = NeuralDataMap_Make_GSprite(DATA_PATH SPRITE_TRAINING,&epoch,NN_COUNT,SPRITE_COUNT,SPRITE_MAX);
     NeuralNetwork_Learn(&nn,&ndm,NN_LEARNRATE);
     NeuralDataMap_Free(&ndm);
 
-    ndm = NeuralDataMap_Make_GSprite(DATA_PATH SPRITE_TEST,&epoch,SPRITE_COUNT,SPRITE_MAX);
+    ndm = NeuralDataMap_Make_GSprite(DATA_PATH SPRITE_TEST,&epoch,NN_COUNT,SPRITE_COUNT,SPRITE_MAX);
     NeuralType loss = NeuralNetwork_Test_C(&nn,&ndm);
     NeuralDataMap_Free(&ndm);
 
