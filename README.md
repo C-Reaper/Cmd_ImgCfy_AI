@@ -1,193 +1,70 @@
-# Cmd_ImgCfy_AI
+# Project README
 
+## Overview
+- The project is a C program that uses neural networks to recognize digits from images. It includes training and testing phases.
 
-## Project Overview
+## Features
+- Neural network for image recognition
+- Training of the neural network on digit images
+- Testing the trained neural network on test images
+- Use of static libraries for graphics and neural network functionality
 
-This project implements specialized functionality related to imgcfy_ai.
-
-## Core Components
-
-### Main Functionality
-- Implements core algorithms for imgcfy_ai
-- Efficient data structures
-- Optimized performance
-- Clean code organization
-
-### Technical Features
-- C/C++ implementation
-- Dynamic memory management
-- Platform-independent design
-- Real-time capable
-
-### Architecture
-- Module separation
-- Clear interface design
-- Proper abstraction layers
-- Extensible design
-
-## Use Cases
-- Production systems
-- Educational purposes
-- Research applications
-- Performance-critical operations
-
-## Performance Characteristics
-- Optimized algorithms
-- Efficient memory usage
-- Scalable architecture
-- Minimal overhead
-
-## Implementation Quality
-- Well-organized code
-- Meaningful naming
-- Proper error handling
-- Memory management
-
-## Build and Deployment
-- Standard C/C++ compilation
-- Makefile-based building
-- Cross-platform support
-- Easy integration
-
-
-## Building the Project
+## Project Structure
+- `build/` - Compiled binary files produced by Main.c
+- `src/` - Source code directory containing Main.c and header files
+  - `Main.c` - Entry point of the program
+  - Header files - Standalone header-based C-files without accompanying implementation files
 
 ### Prerequisites
-- C/C++ Compiler (GCC, Clang, or MSVC)
+- C/C++ Compiler and Debugger (GCC, Clang)
 - Make utility
 - Standard development tools
+- Libraries needed for graphics and neural network functionality:
+  - Graphics: GSprite.h
+  - Neural Network: NeuralNetwork.h
 
-### Build Steps
+## Build & Run
+- **Linux**:
+  ```sh
+  cd /home/codeleaded/Hecke/C/Cmd_ImgCfy_AI
+  make -f Makefile.linux all
+  ```
+  To run the executable:
+  ```sh
+  ./build/Main
+  ```
 
-1. Navigate to project directory:
-```bash
-cd Cmd_ImgCfy_AI
-```
+- **Windows**:
+  ```sh
+  cd C:\path\to\Cmd_ImgCfy_AI
+  make -f Makefile.windows all
+  ```
+  To run the executable:
+  ```sh
+  build\Main.exe
+  ```
 
-2. Build the project:
-```bash
-make -f Makefile.(os) all
-```
+- **Wine (Linux Cross Compile for Windows)**:
+  ```sh
+  cd /home/codeleaded/Hecke/C/Cmd_ImgCfy_AI
+  make -f Makefile.wine all
+  ```
+  To run the executable within Wine:
+  ```sh
+  WINEPREFIX=~/wine64 WINEARCH=win64 wine build/Main.exe
+  ```
 
-3. For clean rebuild:
-```bash
-make -f Makefile.(os) clean
-make -f Makefile.(os) all
-```
+- **Web (Emscripten)**:
+  ```sh
+  cd /home/codeleaded/Hecke/C/Cmd_ImgCfy_AI
+  make -f Makefile.web all
+  ```
+  To run the WebAssembly file using wasmtime:
+  ```sh
+  wasmtime build/Main.wasm
+  ```
 
-4. If there are ./bin and ./libs directories, build libs with:
-```bash
-make -f Makefile.(os) cleanlib
-make -f Makefile.(os) lib
-```
-
-### Build Options
-```bash
-make -f Makefile.(os) all         # build output
-make -f Makefile.(os) do        # build + exe output
-make -f Makefile.(os) clean   # Remove build artifacts
-```
-
-## Running the Project
-
-Execute the compiled binary:
-
-```bash
-./build/Main(.exe)
-```
-
-Or using make:
-```bash
-make -f Makefile.(os) exe
-```
-
-## Project Organization
-
-```
-Cmd_ImgCfy_AI/
-├── src/
-│   ├── Main.c          # Entry point
-│   └── *.c             # Implementation files
-├── Makefile            # Build configuration
-└── README.md           # This file
-```
-
-## Technical Details
-
-### Language: C/C++
-- Performance-oriented
-- Direct hardware access where needed
-- Memory efficient
-- Widely portable
-
-### Key Technologies
-- Standard C library
-- System-specific libraries as needed
-- Algorithm optimization
-- Efficient data structures
-
-### Code Quality
-- Clean, readable implementation
-- Proper error handling
-- Resource management
-- Well-documented algorithms
-
-## Development Notes
-
-### Architecture Decisions
-- Modular design for reusability
-- Efficient algorithms for performance
-- Clear separation of concerns
-- Extensible structure
-
-### Performance Optimizations
-- Algorithm efficiency
-- Memory layout optimization
-- Cache-conscious programming
-- Minimal overhead
-
-### Portability
-- Cross-platform compatible
-- Platform-specific optimizations where possible
-- Standard library usage
-- No external dependencies (where feasible)
-
-## Troubleshooting
-
-### Build Issues
-- Ensure compiler is installed
-- Check file paths and permissions
-- Verify Make installation
-- Review compiler error messages
-
-### Runtime Issues
-- Check input data validity
-- Verify file accessibility
-- Ensure sufficient memory
-- Review output format
-
-### Performance Issues
-- Check compiler optimization flags
-- Profile hot code paths
-- Review algorithm complexity
-- Consider input size
-
-## Future Improvements
-
-Potential enhancements:
-- Additional optimization opportunities
-- Extended functionality
-- Platform-specific optimizations
-- Performance profiling
-
-## References
-
-For technical background:
-- Algorithm textbooks
-- Computer science references
-- Language documentation
-- Online educational resources
-
----
-
-*Project implementing practical algorithms and data structures in C/C++*
+- **Build Options**:
+  - `make -f Makefile.(os) all` - Build output
+  - `make -f Makefile.(os) do` - Build + executable output
+  - `make -f Makefile.(os) clean` - Remove build artifacts
